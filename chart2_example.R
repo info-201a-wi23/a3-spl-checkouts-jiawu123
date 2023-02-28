@@ -1,6 +1,10 @@
-x_values <- seq(1, 3)
-y_values <- seq(1,3)
+# Load relevant libraries
+library("scales")
+library("dplyr")
+library("ggplot2")
 
-library(ggplot2)
-ggplot() +
-  geom_line(aes(x=x_values, y = y_values))
+popular_author <- df %>%
+  filter(Creator %in% c("Charlotte Brontë", "Thomas, Angie")) 
+ggplot(popular_author) +
+  geom_line(aes(x = CheckoutYear, y = Checkouts, color = Creator)) + labs(title = "Two popular author, one one racial issue, one one technology during the year of 2017-2023") +
+  facet_wrap(~Creator)

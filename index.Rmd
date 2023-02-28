@@ -2,85 +2,37 @@
 title: "A3: SPL Library Checkouts"
 output: html_document
 ---
-
 ### Introduction
+Currently, I am really interested in how Covid impacts people from reading. Does Covid stops people from reading? Does Covid changes the way of people read? Does the library checkouts are racially related, since during the 2020, another outbreak of BLM started because of police enforcement? Therefore I choose the data from 2017-2023 Checkout book data, and select 2020 and 2017 as my main focus, and dive into these data to find my answers. 
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
-
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
+```{r, echo = FALSE, message = FALSE, warning = FALSE, code = readLines("Summary.R")}
+```
+The total record of the data set is **`r Total_record`**. The subject that has the highest number of checkout in 2020 is **`r Highest_checkout`**. The subject that has the least number of checkout in 2020 is **`r Lowest_checkout`**. The subject that has the highest number of checkout in 2017 is **`r Highest_checkout2017`**. The subject that has the least number of checkout in 2017 is **`r Lowest_checkout2017`**.
 
 ### The Dataset
 
-- Who collected/published the data?  
-- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-- How was the data collected or generated?  
-- Why was the data collected?  
-- What, if any, ethical questions do you need to consider when working with this data?  
-- What are possible limitations or problems with this data?   (at least 200 words)
-
-
+The data are collected from Seattle Public Library](https://data.seattle.gov/Community/Checkouts-by-Title/tmmm-ytt6).THe data I chose from 2017-2023 has the variable of usage class, checkout type, material type, checkout year, checkout mouth, times that checkout, title, subject, publisher, and publish year. The data is generated from the checkout sector in Seattle Library. The data are collected to analyze the pattern of books and subject and other variable that are checkdout, in which varies in different years. Furthermore, there is a ethical related value that I calculated from the data, which is listed in the Summary part. In 2020, the outbreak of COVID, also the year of  another outbreak of BLM movement, the subject of the highest books that are checked out is African American nonfiction. There are some limitation in this data set, since not all the people borrow books from library and with the growth of pandemic, there is increasing number of people browsing information on social media, that decreases the number of people that borrow books from library, regardless whether or not is an e-book.
 ### First Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+I include the data of checkout times during 2017-2023 of two opposite standings with racial issue books. In 2020 the book "Between the World and Me" showcases a peak, in which explains the the racial related topic here. However, in 2020, the book "The hate u give/Angie Thomas." has completely different result, that it is a turning point to its downfall. First book talks about the Black history, and the second talks about White supremacy. It testifies our assumption to if the data might be racial related. The answer is yes. 
 
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
 ```
 
 ### Second Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+In this graph, I choose two popular author with two completely different writing style and content, one is literature author, the other is racial matter issue. In the chart, I am going to further testify whether the checkout number of different books could be racially related. In the graph, in the year of 2020, in which is the another outbreak of BLM movement, Thomas Angies books has a huge checkout number boost, while Charlotte Brontë, a calssical literature writer has a relatviely flat line. 
 
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+```{r, echo = FALSE, code = readLines("chart2_example.R")}
 ```
 
 ### Your Choice
+My last graph showcases how Covid might impact the form of the books borrowed from the library using the example of classical literature writer Charlotte Brontë. We see a peak of digital book checkout started from the end of 2019 till 2021, then it starts to decline. This chart perfectly showcases the impact of Covid to people daily life on borrowing books.
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+```{r, echo = FALSE, code = readLines("chart3_example.R")}
 ```
 
 
